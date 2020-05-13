@@ -21,15 +21,15 @@ def earliest_ancestor(ancestors, starting_node):
         firsts.add(i[0])
         seconds.add(i[1])
     
-    ancestor_start_points = firsts - seconds
-    #print('starts',ancestor_start_points)
+    ancestor_start = firsts - seconds
+    
     for i in ancestors:
         if i[0] not in ancestor_dict:
             ancestor_dict[i[0]] = [i[1]]
         else:
             ancestor_dict[i[0]].append(i[1])
-    #print('dict',ancestor_dict)
-    for i in ancestor_start_points:
+   
+    for i in ancestor_start:
         q = Queue()
         q.enqueue(i)
         path = [i]
